@@ -1,0 +1,11 @@
+<p>user works!</p>
+
+<div class="col-6 mx-auto" *ngFor="let user of this.userarray, let i=index">
+    <div>{{user}}</div>
+</div>
+<div class="col-6 mx-auto flex" *ngFor="let user of this.userarraytwo,let i=index">
+    <div>first Name: {{user.fname}}</div>
+    <div>Last Name: {{user.lname}}</div>
+    <div>Age: {{user.age}}</div>
+</div>
+<div>{{this.message}}</div>

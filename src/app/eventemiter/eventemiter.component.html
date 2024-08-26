@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+    <div class="col-10 mx-auto shadow">
+        <h6 class="text-center text-primary">Parent Event Emiter</h6>
+        <div class="mt-5 p-3 shadow">
+            <input type="text" [(ngModel)]="msg" class="form-control my-2">
+            <button (click)="sendtochild()" class="btn btn-outline-success ">Send</button>
+
+            <div>
+                <p class="text-primary ms-5 mt-3">Msg From Child: {{childmsg}}</p>
+            </div>
+        </div>
+        <div>
+            <app-eventemiterchild [msgformparent]="msgToChild" (eventemit)="receivemsg($event)"></app-eventemiterchild>
+        </div>
+    </div>
+</div>
+

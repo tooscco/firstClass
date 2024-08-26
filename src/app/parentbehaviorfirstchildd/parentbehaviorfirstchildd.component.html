@@ -1,0 +1,7 @@
+
+<div *ngFor="let contact of contactarray" class="shadow p-3" (click)="updatecontact(contact)" style="cursor: pointer;">
+<p class="text.primary">Name: {{contact.name}}</p>
+<p class="text.primary">Phone number: {{contact.pnumber}}</p>
+<p class="text.primary">Email: {{contact.email}}</p>
+<p class="text.primary">Address: {{contact.add}}</p>
+</div>

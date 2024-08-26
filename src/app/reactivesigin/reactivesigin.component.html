@@ -1,0 +1,12 @@
+<div class="container mb-3">
+    <div class="col-8 mx-auto shadow p-3">
+        <div class="col-10 mx-auto">
+            <h1 class="text-success text-center">Reactive Form for Singin</h1>
+            <form #myForm="ngForm">
+                <input type="email" name="email" [(ngModel)]="email" placeholder="Email" class="form-control my-2 shadow-none">
+                <input type="password" name="password" [(ngModel)]="password" placeholder="Password" class="form-control my-2 shadow-none">
+                <button type="submit" (click)="signInFrom()" [disabled]="myForm.invalid" class="btn btn-outline-success w-100">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>    

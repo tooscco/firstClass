@@ -1,0 +1,19 @@
+<p>templatedriveform works!</p>
+<div class="col-8 mx-auto shadow p-2">
+    <div class="col-10 mx-auto">
+        <h3 class="text-center  text-primary">Template Driven Form</h3>
+        <form #myForm="ngForm">
+            <input type="text" name="firstname" [(ngModel)]="fname" class="form-control my-2 shadow-none" #firstname="ngModel" [class.is-valid]="firstname.valid && firstname.dirty" minlength="5" [class.is-invalid]="firstname.invalid" >
+            <div  *ngIf="firstname.invalid && firstname.dirty">
+                <span class="text-danger" *ngIf="firstname.errors?.['minlength']">The minimum length requried is 5</span>
+            </div>
+
+
+            <input type="text" name="lastname" [(ngModel)]="lname" class="form-control my-2 shadow-none" #lastname="ngModel" [class.is-valid]="lastname.valid" [class.is-invalid]="lastname.invalid && lastname.touched" required>
+            <div *ngIf="lastname.invalid && lastname.touched">
+                <span class="text-danger" *ngIf="lastname.errors?.['required']">This field is required</span>
+            </div>
+            <button class="btn btn-primary w-50" [disabled]="myForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

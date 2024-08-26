@@ -1,0 +1,23 @@
+
+#available{
+    background-color: green;
+    color: white;
+}
+
+#outOfStock{
+    background-color: gray;
+    color: black;
+}
+
+.unavailable{
+    background-color: red;
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.available{
+    background-color: green;
+    color: white;
+    
+}

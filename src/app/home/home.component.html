@@ -1,0 +1,49 @@
+<p>home works!</p>
+<app-navbar></app-navbar>
+
+<div class="col-6 mx-auto mb-5">       
+    <!-- Binding -->
+    <!-- One_way binding -->
+     <a [href]="link">Click Me</a>
+ 
+     <input type="checkbox" name="terms" [(ngModel)]="terms">
+     <label for="">I agree to the terms and conditions</label>
+     <button [disabled]="!terms">Click</button>
+
+     <input type="text" class="form-control" [(ngModel)]="userInput">
+     <p>{{userInput}}</p>
+
+        <div>
+            @for(item of items; track item.id) { 
+                <div class="card px-1" [id]="item.available ? 'available' : 'outOfStock'">
+                    {{item.name}} | {{item.price}}
+                    @if(!item.available){
+                        <P>Out of stock</P>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- Bootsrap styling -->
+        <div>
+            @for(item of items; track item.id) { 
+                <div [class]="item.available ? 'bg-success rounded p-1 text-white border' : 'bg-danger p-1 text-white rounded border'">
+                    {{item.name}} | {{item.price}}
+                    @if(!item.available){
+                        <P>Out of stock</P>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- Functions -->
+         <button class="btn btn-md bg-dark text-light px-1" (click)="myFunction()">Click Me</button>
+         <button class="btn btn-md bg-dark text-light px-1" (click)="goToProduct()">Product</button>
+
+         <div>
+                <div *ngFor="let item of itemis" (click)="Clickbtn(item)" [ngClass]="{'unavailable p-1 rounded': !item.isStudent, 'available p-1 rounded': item.isStudent}">
+                    <p>{{ item.name }} | {{item.price}}</p>
+                </div>
+         </div>
+ </div>
+ <app-register></app-register>
